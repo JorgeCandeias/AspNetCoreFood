@@ -23,6 +23,11 @@ namespace AspNetCoreFood
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseWelcomePage(new WelcomePageOptions
+            {
+                Path = "/welcome"
+            });
+
             app.Run(async (context) =>
             {
                 var greeting = greeter.SetMessageOfTheDay();
